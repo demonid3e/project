@@ -1,4 +1,4 @@
-let numberOfFilms = +prompt("How many films have you watched?", "");
+const numberOfFilms = +prompt("How many films have you watched?", "");
 
 const personalMovieDB = {
   count: numberOfFilms,
@@ -8,8 +8,12 @@ const personalMovieDB = {
   privat: false,
 };
 
-personalMovieDB.movies[0] = prompt("Last watched film?", "");
-personalMovieDB.movies[1] = +prompt("How will you rate it?", "");
+const a = prompt("Last watched film?", ""),
+  b = +prompt("How will you rate it?", ""),
+  c = prompt("Last watched film?", ""),
+  d = +prompt("How will you rate it?", "");
 
-console.log(personalMovieDB.count);
-console.log(personalMovieDB.movies);
+personalMovieDB.movies[a] = b;
+personalMovieDB.movies[c] = d;
+
+console.log(personalMovieDB);
