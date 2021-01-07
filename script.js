@@ -1,3 +1,5 @@
+"use strict";
+
 const numberOfFilms = +prompt("How many films have you watched?", "");
 
 const personalMovieDB = {
@@ -5,7 +7,7 @@ const personalMovieDB = {
   movies: {},
   actors: {},
   genres: [],
-  privat: false,
+  private: false,
 };
 
 const a = prompt("Last watched film?", ""),
