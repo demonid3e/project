@@ -9,10 +9,22 @@ const personalMovieDB = {
   genres: [],
   private: false,
 };
+let film;
+let rating;
 
+const getFilm = function () {
+  film = prompt("Last watched film?", "");
+  return film;
+};
+
+const getRating = function () {
+  rating = +prompt("How will you rate it?", "");
+  return rating;
+};
 for (let i = 0; i < 2; i++) {
-  const film = prompt("Last watched film?", ""),
-    rating = +prompt("How will you rate it?", "");
+  getFilm();
+  getRating();
+
   if (
     film != null &&
     rating != null &&
