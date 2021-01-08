@@ -37,3 +37,27 @@ if (personalMovieDB.count < 10) {
   alert("Error");
 }
 console.log(personalMovieDB);
+
+// Calculation fuction
+function calc(a, b) {
+  return a + b;
+  // Function breaks after return!
+}
+
+console.log(calc(2, 6));
+
+// Takes text as argument to show in console log
+function showFirstText(text) {
+  console.log(text);
+}
+showFirstText("Hello world");
+
+// example of scope and global variable
+
+let num = 20;
+
+function callNumber() {
+  let num = 30;
+  console.log(num);
+}
+callNumber();
