@@ -72,7 +72,7 @@ function writeYourGenres() {
   }
 }
 writeYourGenres();
-
+// checks the argument for true or false
 function showMyDB(hrenova) {
   if (!hrenova) console.log(personalMovieDB);
 }
