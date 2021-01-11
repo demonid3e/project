@@ -1,6 +1,15 @@
 "use strict";
 
-const numberOfFilms = +prompt("How many films have you watched?", "");
+let numberOfFilms;
+
+function start() {
+  numberOfFilms = +prompt("How many films you watched?", "");
+
+  while (numberOfFilms == "" || numberOfFilms == null || isNaN(numberOfFilms)) {
+    numberOfFilms = +prompt("How many films you watched?", "");
+  }
+}
+start();
 
 const personalMovieDB = {
   count: numberOfFilms,
@@ -21,75 +30,101 @@ const getRating = function () {
   rating = +prompt("How will you rate it?", "");
   return rating;
 };
-for (let i = 0; i < 2; i++) {
-  getFilm();
-  getRating();
 
-  if (
-    film != null &&
-    rating != null &&
-    film != "" &&
-    rating != "" &&
-    film.length < 50
-  ) {
-    personalMovieDB.movies[film] = rating;
-    console.log("Done");
-  } else {
-    i--;
-    console.log("Error");
+function rememberMyfilms() {
+  for (let i = 0; i < 2; i++) {
+    getFilm();
+    getRating();
+
+    if (
+      film != null &&
+      rating != null &&
+      film != "" &&
+      rating != "" &&
+      film.length < 50
+    ) {
+      personalMovieDB.movies[film] = rating;
+      console.log("Done");
+    } else {
+      i--;
+      console.log("Error");
+    }
   }
 }
-if (personalMovieDB.count < 10) {
-  alert("Watched to few movies!");
-} else if (personalMovieDB.count > 10 && personalMovieDB.count < 30) {
-  alert("You are typical movie lover!");
-} else if (personalMovieDB.count > 30) {
-  alert("You are movie fan!!!");
-} else {
-  alert("Error");
+rememberMyfilms();
+
+function detectPersonalLevel() {
+  if (personalMovieDB.count <= 10) {
+    alert("Watched to few movies!");
+  } else if (personalMovieDB.count > 10 && personalMovieDB.count <= 30) {
+    alert("You are typical movie lover!");
+  } else if (personalMovieDB.count > 30) {
+    alert("You are movie fan!!!");
+  } else {
+    alert("Error");
+  }
 }
-console.log(personalMovieDB);
+detectPersonalLevel();
 
-// Calculation fuction
-function calc(a, b) {
-  return a + b;
-  // Function breaks after return!
+function writeYourGenres() {
+  for (let i = 1; i <= 3; i++) {
+    personalMovieDB.genres[i - 1] = prompt(`Your favorite genre? ${i}`, "");
+  }
+}
+writeYourGenres();
+
+function showMyDB(hrenova) {
+  if (!hrenova) console.log(personalMovieDB);
 }
 
-console.log(calc(2, 6));
+showMyDB(personalMovieDB.private);
 
-// Takes text as argument to show in console log
-function showFirstText(text) {
-  console.log(text);
-}
-showFirstText("Hello world");
+// function showMyDB(hidden) {
+//   if (personalMovieDB.private == false) {
+//     console.log(personalMovieDB);
+//   }
+// }
 
-// example of scope and global variable
+// // Calculation fuction
+// function calc(a, b) {
+//   return a + b;
+//   // Function breaks after return!
+// }
 
-let num = 20;
-// Type of: function declaration, can be called before it is read.
+// console.log(calc(2, 6));
 
-function callNumber() {
-  let num = 30;
-  console.log(num);
-}
-callNumber();
+// // Takes text as argument to show in console log
+// function showFirstText(text) {
+//   console.log(text);
+// }
+// showFirstText("Hello world");
 
-// Type of: function expression, only called when its read.
+// // example of scope and global variable
 
-const calculus = function (a, b) {
-  return a + b;
-};
-console.log(calculus(5, 3));
+// let num = 20;
+// // Type of: function declaration, can be called before it is read.
 
-// Type of: arrow function, doesnt have contects "THIS???"
+// function callNumber() {
+//   let num = 30;
+//   console.log(num);
+// }
+// callNumber();
 
-const calCulus = (a, b) => {
-  return a + b;
-};
-//or if its only 1 line can write like this
-const balCulus = (a, b) => a + b;
-//or if only 1 argument
-const galCulus = (a) => a + 7;
+// // Type of: function expression, only called when its read.
 
-console.log(galCulus(4));
+// const calculus = function (a, b) {
+//   return a + b;
+// };
+// console.log(calculus(5, 3));
+
+// // Type of: arrow function, doesnt have contects "THIS???"
+
+// const calCulus = (a, b) => {
+//   return a + b;
+// };
+// //or if its only 1 line can write like this
+// const balCulus = (a, b) => a + b;
+// //or if only 1 argument
+// const galCulus = (a) => a + 7;
+
+// console.log(galCulus(4));
