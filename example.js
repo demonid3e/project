@@ -1,13 +1,67 @@
 "use strict";
+// right way to inherit prototype
+const soldier = {
+  health: 400,
+  armor: 160,
+  sayHello: function () {
+    console.log("Hello");
+  },
+};
 
-const arr = [12, 3, 46, 8, 10];
+const joe = Object.create(soldier);
 
-arr.sort(compareNum);
-console.log(arr);
+joe.sayHello();
 
-function compareNum(a, b) {
-  return a - b;
-}
+// const john = {
+//   health: 100,
+// };
+
+// Object.setPrototypeOf(john, soldier);
+// old style of codding absolente
+// john.__proto__ = soldier;
+
+// function log(a, b, c) {
+//     console.log(a);
+//     console.log(b);
+//     console.log(c);
+//   }
+
+//   const num = [2, 5, 7];
+
+//   log(...num);
+
+// const array = ["a", "b"];
+
+// const newAaray = [...array];
+
+// const q = {
+//     one: 1,
+//     two: 2
+// };
+
+// const newObj = {...q};
+
+// const oldArray = ["a", "b", "c"];
+// const newArray = oldArray.slice();
+
+// newArray[1] = "Demon";
+
+// console.log(newArray);
+// console.log(oldArray);
+
+// const video = ["youtube", "vimeo", "rutube"],
+//       blogs = ["wordpress", "livejournal", "blogger"],
+//       internet = [...video, ...blogs, "vk", "facebook"];
+// console.log(internet);
+
+// const arr = [12, 3, 46, 8, 10];
+
+// arr.sort(compareNum);
+// console.log(arr);
+
+// function compareNum(a, b) {
+//   return a - b;
+// }
 
 // arr[99] = 0;
 // console.log(arr.length);
