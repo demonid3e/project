@@ -3,8 +3,9 @@
 const box = document.getElementById("box"),
   btns = document.getElementsByTagName("button"),
   circles = document.getElementsByClassName("circle"),
-  hearts = document.querySelectorAll(".heart"),
-  oneHeart = document.querySelector(".heart");
+  wrapper = document.querySelector(".wrapper"),
+  hearts = wrapper.qerySelectorAll(".heart"),
+  oneHeart = wrapper.querySelector(".heart");
 
 // box.style.backgroundColor = "blue";
 // box.style.width = "500px";
@@ -36,8 +37,6 @@ div.classList.add("black");
 
 // creates just text
 const text = document.createTextNode("This is text");
-
-const wrapper = document.querySelector(".wrapper");
 
 // puts element to the beginning
 wrapper.append(div);

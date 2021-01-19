@@ -5,7 +5,7 @@ const box = document.getElementById("box"),
   btns = document.getElementsByTagName("button"),
   circles = document.getElementsByClassName("circle"),
   wrapper = document.querySelector(".wrapper"),
-  hearts = wrapper.qerySelectorAll(".heart"),
+  hearts = wrapper.querySelectorAll(".heart"),
   oneHeart = wrapper.querySelector(".heart");
 
 // box.style.backgroundColor = "blue";
