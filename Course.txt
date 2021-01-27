@@ -1,5 +1,69 @@
 
-"use strict";
+
+
+
+// console.log(document.head);
+// console.log(document.documentElement);
+
+// console.log(document.body.childNodes);
+// const body = document.querySelectorAll("body");
+
+for (let node of document.body.childNodes) {
+  if (node.nodeName == "#text") {
+    continue;
+  }
+  console.log(node);
+}
+
+// console.log(document.body.firstChild);
+// console.log(document.body.firstElementChild);
+// console.log(document.body.lastChild);
+
+// will get element of child current 2 levels up
+//console.log(document.querySelector("#current").parentNode.parentNode);
+//console.log(document.querySelector("#current").parentElement);
+
+// console.log(
+//   document.querySelector("[data-current='3']").nextSibling.nextSibling
+// );
+// console.log(document.querySelector("[data-current='3']").nextElementSibling);
+
+
+
+
+const btn = document.querySelectorAll("button"),
+  overlay = document.querySelector(".overlay");
+
+// // bad way of doing it
+// btn.onclick = function () {
+//   alert("Test alert");
+// };
+
+// btn.onclick = function () {
+//   alert("second alert");
+// };
+
+// btn.addEventListener("click", () => {
+//   alert("Clicked");
+// });
+
+const deleteElement = (element) => {
+  // element.target.remove();
+  console.log(element.target);
+};
+
+// adding event listener to all psyodo array
+btn.forEach((item) => {
+  item.addEventListener("click", deleteElement, { once: true });
+});
+
+// change browser`s default responce
+const link = document.querySelector("a");
+link.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  console.log(event.target);
+});
 
 const box = document.getElementById("box"),
   btns = document.getElementsByTagName("button"),
