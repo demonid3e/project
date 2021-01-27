@@ -44,6 +44,8 @@ const deleteAdv = (arr) => {
   });
 };
 
+newFilm.length;
+
 // changing title
 // changing background
 const makeChanges = () => {
@@ -57,10 +59,12 @@ const sortArray = (arr) => {
 
 addForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  let newFilm = addInput.value;
+  let toString = addInput.value;
+  let newFilm = String(toString);
+
   const favorite = checkbox.checked;
-  console.log(addInput.value.lenght);
-  console.log(newFilm.lenght);
+  console.log(addInput.value.length);
+  console.log(newFilm.length);
   console.log(newFilm);
   console.log(typeof newFilm);
   if (newFilm) {
