@@ -63,12 +63,9 @@ addForm.addEventListener("submit", (event) => {
   let newFilm = String(toString);
 
   const favorite = checkbox.checked;
-  console.log(addInput.value.length);
-  console.log(newFilm.length);
-  console.log(newFilm);
-  console.log(typeof newFilm);
   if (newFilm) {
-    if (newFilm.lenght > 21) {
+    // checks if length is more than 21 then slices after 21character and adds ...
+    if (newFilm.length > 21) {
       newFilm = `${newFilm.substring(0, 22)}...`;
     }
     movieDB.movies.push(newFilm);
