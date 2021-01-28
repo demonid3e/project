@@ -15,11 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
     movieList = document.querySelector(".promo__interactive-list"),
     changeText = document.querySelector(".promo__genre"),
     poster = document.querySelector(".promo__bg"),
-    remover = document.querySelectorAll(".promo__interactive-item"),
     addForm = document.querySelector("form.add"),
     addInput = addForm.querySelector(".adding__input"),
-    buttonInput = document.querySelector(".submitFilm"),
-    checkbox = document.querySelector("[type='checkbox']");
+    checkbox = document.querySelector("[type='checkbox']"),
+    remover = document.querySelectorAll(".delete");
 
   // removing ads from right side
   const deleteAdv = (arr) => {
@@ -61,15 +60,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function createMovieList(films, parent) {
     parent.innerHTML = "";
+    sortArray(films);
+
     films.forEach((film, i) => {
       parent.innerHTML += `<li class="promo__interactive-item">
         ${i + 1}, ${film}
         <div class="delete"></div>
         </li>`;
     });
+
+    document.querySelectorAll(".delete").forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        btn.parentElement.remove();
+        movieDB.movies.splice(i, 1);
+        createMovieList(parent, films);
+      });
+    });
   }
+
   deleteAdv(adv);
   makeChanges();
-  sortArray(movieDB.movies);
   createMovieList(movieDB.movies, movieList);
 });
