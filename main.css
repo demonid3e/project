@@ -1,5 +1,17 @@
-.box {
-  height: 300px;
-  width: 300px;
+.button {
+  height: 50px;
+  width: 30px;
   background-color: red;
+  padding-right: 20px;
+}
+.green {
+  background-color: green;
+}
+
+.yellow {
+  background-color: greenyellow;
+}
+
+.button_block {
+  background-color: grey;
 }
