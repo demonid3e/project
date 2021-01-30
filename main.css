@@ -1,17 +1,35 @@
-.button {
-  height: 50px;
-  width: 30px;
-  background-color: red;
-  padding-right: 20px;
-}
-.green {
-  background-color: green;
+.website_size {
+  width: 750px;
+  height: 3000px;
 }
 
-.yellow {
-  background-color: greenyellow;
+.fh2 {
+  font-size: 18px;
 }
 
-.button_block {
-  background-color: grey;
+.wedding_package_1 {
+  border-radius: 20px;
+  border-style: double;
+  border-color: blueviolet;
+  width: 700px;
+  height: 750px;
+  box-shadow: 5px 10px;
+  margin-bottom: 30px;
+}
+
+.wedding_package_2 {
+  border-radius: 20px;
+  border-style: double;
+  border-color: rgb(116, 20, 33);
+  width: 700px;
+  height: 1050px;
+  box-shadow: 5px 10px;
+  margin-bottom: 30px;
+}
+.includes_title {
+  font-weight: bold;
+}
+.package_includes:hover {
+  font-size: 120%;
+  transition: 0.8s;
 }

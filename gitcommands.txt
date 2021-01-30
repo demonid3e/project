@@ -1,0 +1,4 @@
+
+
+// discards all 
+git reset --hard  
