@@ -1,8 +1,18 @@
 .website_size {
-  width: 750px;
+  width: 900px;
   height: 3000px;
+  background-color: lavender;
 }
+body {
+  margin: 0;
+  padding: 0;
 
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+  color: black;
+}
 .fh2 {
   font-size: 18px;
 }
@@ -12,9 +22,10 @@
   border-style: double;
   border-color: blueviolet;
   width: 700px;
-  height: 750px;
+  height: 400px;
   box-shadow: 5px 10px;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .wedding_package_2 {
@@ -22,14 +33,26 @@
   border-style: double;
   border-color: rgb(116, 20, 33);
   width: 700px;
-  height: 1050px;
+  height: 750px;
   box-shadow: 5px 10px;
   margin-bottom: 30px;
+  text-align: center;
 }
+.wedding_package_3 {
+  border-radius: 20px;
+  border-style: double;
+  border-color: rgb(116, 20, 33);
+  width: 700px;
+  height: 780px;
+  box-shadow: 5px 10px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
 .includes_title {
   font-weight: bold;
 }
-.package_includes:hover {
-  font-size: 120%;
-  transition: 0.8s;
+
+.package_includes {
+  list-style: none;
 }
