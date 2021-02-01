@@ -1,13 +1,26 @@
 .website_size {
   width: 900px;
   height: 3000px;
+  border: rgb(255, 255, 255) solid 1px;
   background-color: lavender;
 }
+
+.flex {
+  display: flex;
+}
+.box {
+  display: block;
+  width: 200px;
+  height: 100px;
+  border-radius: 15px;
+  border-style: solid;
+  border-color: blueviolet;
+}
+
 body {
   margin: 0;
   padding: 0;
-
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Yusei Magic", Arial, sans-serif;
   font-size: 14px;
   line-height: 24px;
   font-weight: 400;
@@ -17,42 +30,35 @@ body {
   font-size: 18px;
 }
 
-.wedding_package_1 {
+.introduction {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.dear_couples {
+  padding-left: 40px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+section article {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
   border-radius: 20px;
   border-style: double;
   border-color: blueviolet;
-  width: 700px;
-  height: 400px;
+  width: 90%;
   box-shadow: 5px 10px;
   margin-bottom: 30px;
-  text-align: center;
+  text-align: left;
+  margin: 20px;
 }
 
-.wedding_package_2 {
-  border-radius: 20px;
-  border-style: double;
-  border-color: rgb(116, 20, 33);
-  width: 700px;
-  height: 750px;
-  box-shadow: 5px 10px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-.wedding_package_3 {
-  border-radius: 20px;
-  border-style: double;
-  border-color: rgb(116, 20, 33);
-  width: 700px;
-  height: 780px;
-  box-shadow: 5px 10px;
-  margin-bottom: 30px;
-  text-align: center;
+.quotation {
+  font-style: italic;
 }
 
 .includes_title {
   font-weight: bold;
-}
-
-.package_includes {
-  list-style: none;
 }
