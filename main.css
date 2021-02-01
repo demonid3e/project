@@ -1,6 +1,6 @@
 .website_size {
   width: 900px;
-  height: 3000px;
+  height: auto;
   border: rgb(255, 255, 255) solid 1px;
   background-color: lavender;
 }
@@ -47,4 +47,13 @@ section article {
 
 .includes_title {
   font-weight: bold;
+}
+.float_left {
+  float: left;
+  margin: 10px;
+}
+
+.float_right {
+  float: right;
+  margin: 10px;
 }
