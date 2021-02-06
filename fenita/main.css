@@ -5,6 +5,7 @@
   background-color: #ebead3;
   font-size: 16px;
 }
+
 #pagetitle {
   display: none;
 }
@@ -41,7 +42,6 @@ body {
 }
 
 .dear_couples {
-  padding-left: 40px;
   font-size: 20px;
   font-weight: 400;
 }
@@ -81,7 +81,7 @@ section article {
 }
 
 .wpackage_h2 {
-  font-family: "Cinzel Decorative", arial, cursive;
+  font-family: "Cinzel Decorative", cursive;
   font-size: 30px;
   text-align: center;
   color: #6e3131;
@@ -97,13 +97,14 @@ section article {
   font-size: 20px;
 }
 .wh2 {
-  font-family: "Cinzel Decorative", arial, cursive;
+  font-family: "Cinzel Decorative", cursive;
   font-size: 30px;
   text-align: center;
   font-weight: 700;
   color: #6e3131;
   line-height: 1;
 }
+
 .float_left_products {
   float: left;
   padding: 0px;
