@@ -16,36 +16,34 @@ function showThat(a, b) {
 }
 
 showThat(4, 8);
-1) Common function: this = window, but if "use strict"  = undefined
-
+// 1) Common function: this = window, but if "use strict"  = undefined
 
 const obj = {
   a: 20,
   b: 15,
   sum: function () {
     console.log(this);
-    function shout (){
-        console.log(this);
+    function shout() {
+      console.log(this);
     }
   },
 };
 obj.sum();
 
-2) Object`s method`s context will be object itself.
-(if inside this object will be function which will use "this"
-it will be used in context of window or if "use strict is not used" undefined).
+// 2) Object`s method`s context will be object itself.
+//(if inside this object will be function which will use "this"
+//it will be used in context of window or if "use strict is not used" undefined).
 
-3) "this" in Constructors and Classes - new property of object
-function User (name,id){
-    this.name = name;
-    this.id = id;
-    this.human = true;
-
+//3) "this" in Constructors and Classes - new property of object
+function User(name, id) {
+  this.name = name;
+  this.id = id;
+  this.human = true;
 }
 
 let ivan = new User("Ivan", 23);
 
-4) Manual change focus of "this" : call, apply, bind
+// 4) Manual change focus of "this" : call, apply, bind
 
 function sayName(age) {
   console.log(this);
