@@ -2,43 +2,61 @@
   width: 900px;
   height: auto;
   border: rgb(255, 255, 255) solid 1px;
-  background-color: lavender;
+  background-color: #ebead3;
+  font-size: 16px;
 }
 
+#pagetitle {
+  display: none;
+}
 body {
   margin: 0;
   padding: 0;
   font-family: "Yusei Magic", Arial, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 24px;
   font-weight: 400;
   color: black;
 }
-.fh2 {
-  font-size: 18px;
+.wfh2 {
+  font-size: 24px;
+  font-weight: 400;
+  color: #6e3131;
+  text-align: center;
+  font-style: italic;
 }
 
 .introduction {
   margin-left: 40px;
   margin-right: 40px;
+  padding: 15px;
+  border-style: solid;
+  border-color: #5c5249;
+  width: auto;
+  box-shadow: 5px 10px #91919196;
+  margin-bottom: 30px;
+  text-align: left;
+  margin: 20px;
+  background-color: #d4cfcd;
+  border-radius: 20px;
 }
 
 .dear_couples {
-  padding-left: 40px;
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 section article {
   padding: 20px;
   border-radius: 20px;
-  border-style: double;
-  border-color: blueviolet;
+  border-style: solid;
+  border-color: #5c5249;
   width: 90%;
-  box-shadow: 5px 10px;
+  box-shadow: 5px 10px #91919196;
   margin-bottom: 30px;
   text-align: left;
   margin: 20px;
+  background-color: #d4cfcd;
 }
 
 .quotation {
@@ -51,9 +69,54 @@ section article {
 .float_left {
   float: left;
   margin: 10px;
+  padding: 10px;
+  border-radius: 10%;
 }
 
 .float_right {
   float: right;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10%;
+}
+
+.wpackage_h2 {
+  font-family: "Cinzel Decorative", cursive;
+  font-size: 30px;
+  text-align: center;
+  color: #6e3131;
+}
+.float_left_portrait {
+  float: left;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 10%;
+}
+.kind_words {
+  text-align: center;
+  font-size: 20px;
+}
+.wh2 {
+  font-family: "Cinzel Decorative", cursive;
+  font-size: 30px;
+  text-align: center;
+  font-weight: 700;
+  color: #6e3131;
+  line-height: 1;
+}
+
+.float_left_products {
+  float: left;
+  padding: 0px;
   margin: 10px;
+  border-radius: 10px;
+}
+.float_right_products {
+  float: right;
+  padding: 0px;
+  margin: 10px;
+  border-radius: 10px;
+}
+.bevel_edge {
+  min-height: 300px;
 }
