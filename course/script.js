@@ -1,21 +1,51 @@
 "use strict";
 
-const numberOfFilms = +prompt("How many films have you watched?", "");
+// old style of creating
+const abj = new Object();
 
-const personalMovieDB = {
-  count: numberOfFilms,
-  movies: {},
-  actors: {},
-  genres: [],
-  private: false,
+const options = {
+  name: "test",
+  width: 1024,
+  height: 1024,
+  colors: {
+    border: "black",
+    background: "red",
+  },
+  // creating a new method of an object
+  makeTest: function () {
+    console.log("This is test");
+  },
 };
 
-const a = prompt("Last watched film?", ""),
-  b = +prompt("How will you rate it?", ""),
-  c = prompt("Last watched film?", ""),
-  d = +prompt("How will you rate it?", "");
+console.log(options.name);
 
-personalMovieDB.movies[a] = b;
-personalMovieDB.movies[c] = d;
+// delete options.name;
 
-console.log(personalMovieDB.movies);
+console.log(options);
+
+// cycle trought the object/keys
+
+let counter = 0;
+for (let key in options) {
+  if (typeof options[key] === "object") {
+    for (let i in options[key]) {
+      console.log(`Property ${i}, has Value: ${options[key][i]} `);
+      counter++;
+    }
+  } else {
+    console.log(`Property ${key}, has Value: ${options[key]} `);
+    counter++;
+  }
+}
+
+console.log(counter);
+
+// iterates trought options.keys and then gets the lenght of the result
+console.log(Object.keys(options).length);
+
+options.makeTest();
+
+/////Object destructarisation//////
+
+const { border, background } = options.colors;
+console.log(border);

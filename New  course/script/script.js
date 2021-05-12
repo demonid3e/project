@@ -1,3 +1,264 @@
+"use strict";
+
+// old style of creating
+const abj = new Object();
+
+const options = {
+  name: "test",
+  width: 1024,
+  height: 1024,
+  colors: {
+    border: "black",
+    background: "red",
+  },
+  // creating a new method of an object
+  makeTest: function () {
+    console.log("This is test");
+  },
+};
+
+console.log(options.name);
+
+// delete options.name;
+
+console.log(options);
+
+// cycle trought the object/keys
+
+let counter = 0;
+for (let key in options) {
+  if (typeof options[key] === "object") {
+    for (let i in options[key]) {
+      console.log(`Property ${i}, has Value: ${options[key][i]} `);
+      counter++;
+    }
+  } else {
+    console.log(`Property ${key}, has Value: ${options[key]} `);
+    counter++;
+  }
+}
+
+console.log(counter);
+
+// iterates trought options.keys and then gets the lenght of the result
+console.log(Object.keys(options).length);
+
+options.makeTest();
+
+/////Object destructarisation//////
+
+const { border, background } = options.colors;
+console.log(border);
+
+////////Properties and Methods for strings and Numbers///////
+/////////////////////////////////////////////////////////////
+
+const str = "test";
+const arr = [1, 2, 3];
+
+console.log(arr.length); // 3
+console.log(str.length); // 4
+
+console.log(str[2]); // s
+
+console.log(str.toUpperCase()); // TEST coverts but original kept the same
+
+const fruit = "Some fruit";
+
+console.log(fruit.indexOf("fruit")); // 5
+console.log(fruit.indexOf("q")); // -1 not found
+
+const logg = "Hello world";
+
+console.log(logg.slice(6, 11)); // world
+console.log(logg.slice(6)); // will slice from 6 to the end
+console.log(logg.slice(-5, -1)); // worl   cuts from the end
+
+console.log(logg.substring(6, 11)); // same as slice but doesnt support negative
+console.log(logg.substr(0, 5)); // Hello/ where to start and how many characters
+
+const round = 12.2;
+console.log(Math.round(round)); // 12
+
+const test = "12.2px";
+console.log(parseInt(test)); // extracts NUMBER 12 from string
+console.log(parseFloat(test)); // extracts FLOAT 12.2 from string
+
+//////////Functions///////////
+//////////////////////////////
+
+function showFirstMessage() {
+  console.log("Hello World");
+}
+
+showFirstMessage();
+
+// variable let and const only exist in scope
+function addTwoNumbers(a, b) {
+  const c = a + b;
+  console.log(c);
+}
+addTwoNumbers(13, 10);
+// after return function stops
+function calc(a, b) {
+  return a + b;
+}
+console.log(calc(10, 5));
+//
+function showText(text) {
+  console.log(text);
+}
+
+showText("hello world");
+
+// global num and local num. console.log will show 10
+// function goes step by step and looks first inside itself for variable
+// then it look step higher
+let num = 30;
+
+function sortMyNum(text) {
+  console.log(text);
+  let num = 10;
+  return num;
+}
+console.log(sortMyNum("sdfdsffsdf"));
+//
+
+function rec() {
+  let num = 50;
+  return num;
+}
+const anotherNum = rec();
+console.log(anotherNum);
+
+//function declaration exist before it being called/declared
+
+function name() {}
+
+// function expression, must put ; at the end
+// can only be used after it been declared
+
+const logger = function () {
+  console.log("Hello");
+};
+
+logger();
+
+// arrow function/ arrow notation // doesnt have this
+const colc = (a, b) => {
+  return a + b;
+};
+
+//////Callback Functions/////////
+
+function first() {
+  // do something
+
+  //emulating server responce as it can take time
+  setTimeout(function () {
+    console.log(1);
+  }, 500);
+}
+
+function second() {
+  console.log(2);
+}
+
+first();
+second();
+
+// second worked before first due to delay
+
+// callback
+function learJS(lang, callback) {
+  console.log(`I study: ${lang}`);
+  callback();
+}
+
+function done() {
+  console.log("I have finished this lesson");
+}
+
+// dont need to add () for the function
+learJS("Javascript", done);
+
+//////////////Loops/////////////////
+////////////////////////////////////
+
+let number = 50;
+
+// while condition is not met
+while (number <= 55) {
+  console.log(number);
+  number++;
+}
+
+// do first then continue while condition is not met
+do {
+  console.log(number);
+  number++;
+} while (number < 55);
+
+for (let i = 1; i < 20; i++) {
+  // will stop loop when i is 10
+  if (i === 10) {
+    break;
+  }
+  // will skip iteration when i is 6
+  if (i === 6) {
+    continue;
+  }
+  console.log(i);
+}
+
+//////////////Conditions//////////////
+//////////////////////////////////////
+
+if (4 === 9) {
+  console.log("Ok");
+} else {
+  console.log("Error");
+}
+
+// will show Ok.  if 1 is true
+if (1) {
+  console.log("Ok");
+} else {
+  console.log("Error");
+}
+{
+  const num = 50;
+  if (num < 49) {
+    console.log("Errorr");
+  } else if (num > 100) {
+    console.log("Too much");
+  } else {
+    console.log("OKk");
+  }
+}
+{
+  // switch only using STRICT comparison
+  // must use break it will stop if case is true
+  const test = 30;
+  switch (test) {
+    case 49:
+      console.log("is not 49");
+      break;
+    case 100:
+      console.log(" is not 100");
+      break;
+    case 30:
+      console.log("It is right");
+      break;
+    // need to add default value
+    default:
+      console.log("Not this time");
+      break;
+  }
+}
+// Ternary Operator has condition result for true and for false
+num === 50 ? console.log("Ok") : console.log("Error");
+
 ////////////Java Script Operators///////////
 ///////////////////////////////////////////
 
@@ -61,7 +322,7 @@ alert(`Hello, ${user}`);
 ////////////////////////////////////
 ////Primitive data types
 // numbers
-let number = 4.6; //decimals must be presented with dot
+let numbers = 4.6; //decimals must be presented with dot
 
 console.log(4 / 0); // will show Infinity
 console.log(-4 / 0); // will show -Infinity
@@ -93,12 +354,12 @@ const obj = {
 };
 console.log(obj["name"]);
 console.log(obj.isMarried);
-// Arrays is object with data that is kept in strict order
+{
+  // Arrays is object with data that is kept in strict order
+  let arr = ["plum.png", "orange.jpg", "apple.bmp", 6, {}, []]; // can all data types
 
-let arr = ["plum.png", "orange.jpg", "apple.bmp", 6, {}, []]; // can all data types
-
-console.log(arr[1]); // will show orange.jpg  as it starts from 0,1,2
-
+  console.log(arr[1]); // will show orange.jpg  as it starts from 0,1,2
+}
 // functions
 // data objects
 // regular expressions
