@@ -1,83 +1,106 @@
 "use strict";
 
-/////// Array and pseudo Array ////////
+///////// Spread Operator ///////
 
-const arr = [1, 2, 3, 6, 8];
+// with Primitive data types it works wih VALUES
+let a = 5,
+  b = a;
 
-// property length last id of array +1
-console.log(arr.length);
+b = b + 5;
 
-arr.pop(); // removes last element
+console.log(b); // 10
+console.log(a); // 5
 
-arr.push(10); // add element to the end
+// Non primitive data types it works by LINKS/REFERENCES
 
-arr.shift(); // deletes first element from array and returns new array
+const obj = {
+  a: 5,
+  b: 1,
+};
+// it only makes the link to obj not copying it value
+const copy = obj;
 
-arr.unshift("a"); // adds element to the beggining of array
+copy.a = 10;
+console.log(copy); // {a: 10, b: 1};
+console.log(obj); // {a:10, b: 1};
 
-delete arr[1]; // deletes second element in array
+// surface copy only copies the first level object
+function copyObj(mainObject) {
+  let objCopy = {};
 
-// will create array from string if entered with ","
-
-const str = prompt("", ""); // java,ggg,hhh,jjj
-const products = str.split("", "");
-
-const months = ["Jan", "March", "April", "June"];
-months.splice(1, 0, "Feb");
-// inserts at index 1
-console.log(months);
-// expected output: Array ["Jan", "Feb", "March", "April", "June"]
-
-months.splice(4, 1, "May");
-// replaces 1 element at index 4
-console.log(months);
-// expected output: Array ["Jan", "Feb", "March", "April", "May"]
-//
-const animals = ["ant", "bison", "camel", "duck", "elephant"];
-console.log(animals.slice(2));
-// expected output: Array ["camel", "duck", "elephant"]
-
-const months1 = ["March", "Jan", "Feb", "Dec"];
-months1.sort();
-console.log(months1);
-// expected output: Array ["Dec", "Feb", "Jan", "March"]
-
-const array1 = [1, 30, 4, 21, 100000];
-array1.sort();
-console.log(array1);
-// expected output: Array [1, 100000, 21, 30, 4]
-
-function compareNumbers(a, b) {
-  return a - b;
+  let key;
+  for (key in mainObject) {
+    objCopy[key] = mainObject[key];
+  }
+  return objCopy;
 }
 
-arr.reverse(); // will reverse the order of elements
+const numbers = {
+  a: 2,
+  b: 5,
+  c: {
+    x: 7,
+    y: 4,
+  },
+};
 
-arr.concat("item1"); // creates new array in which copies all elements and adds "item1"
+const newNumbers = copyObj(numbers);
+newNumbers.a = 10;
+console.log(newNumbers); // { a: 10, b: 5, c: { x: 7, y: 4 } }
+console.log(numbers); // { a: 2, b: 5, c: { x: 7, y: 4 } }
 
-const elements = ["Fire", "Air", "Water"];
+//// Object Assign///
 
-console.log(elements.join());
-// expected output: "Fire,Air,Water"
+const add = {
+  d: 17,
+  e: 20,
+};
 
-console.log(elements.join(""));
-// expected output: "FireAirWater"
+const combined = Object.assign(numbers, add);
+console.log(combined);
+// { a: 2, b: 5, c: { x: 7, y: 4 }, d: 17, e: 20 }
 
-console.log(elements.join("-"));
-// expected output: "Fire-Air-Water"
+const clone = Object.assign({}, add);
 
-/////////////////////////////////////
-// use of "for" loop in array
-for (let i = 0; i < arr.length; i++) {
-  console.log(arr[i]);
+clone.d = 20;
+
+console.log(add); // { d: 17, e: 20 }
+console.log(clone); // { d: 20, e: 20 }
+
+//// Array Copy ////
+
+const oldArray = ["a", "b", "c"];
+const newArray = oldArray.slice();
+
+newArray[1] = "fsfsdf";
+console.log(oldArray); // [ 'a', 'b', 'c' ]
+console.log(newArray); // [ 'a', 'fsfsdf', 'c' ]
+
+// ES 6 ES 8 spread operator
+
+const video = ["youtube", "vimeo", "rutube"],
+  blogs = ["wordpress", "livejournal", "blogger"],
+  internet = [...video, ...blogs, "vk", "facebook"];
+console.log(internet);
+// ['youtube','vimeo','rutube','wordpress','livejournal','blogger','vk','facebook']
+
+function log(a, b, c) {
+  console.log(a);
+  console.log(b);
+  console.log(c);
 }
 
-// use of  "for of" loop // can use break and continue
-for (let value of arr) {
-  console.log(value);
-}
+const num = [2, 5, 7];
+log(...num);
 
-// takes 3 arguments: Item, number in array, and The array forEach() was called upon
-arr.forEach((item, numberInorder, arr) => {
-  console.log(`${item}: ${numberInorder} in array ${arr}`);
-});
+// will make surface copy using spread operator
+const array = ["a", "b"];
+const newAaray = [...array];
+
+//  ES9 standart but will work in ES8
+const q = {
+  one: 1,
+  two: 2,
+};
+
+const w = { ...q };
