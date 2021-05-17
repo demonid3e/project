@@ -1,5 +1,38 @@
 "use strict";
 
+"use strict";
+
+///// Inheritance - Object Oriented Programming ///////
+
+let str = "some";
+let strObj = new String(str);
+
+console.log(typeof str); /// string
+console.log(typeof strObj); /// object
+
+const solder = {
+  health: 400,
+  armor: 100,
+  sayHello: function () {
+    console.log("Hello");
+  },
+};
+
+const john = {
+  health: 100,
+};
+
+// Old way of inheratence
+john.__proto__ = solder;
+console.log(john); /// { health: 100 }
+console.log(john.armor); /// 100
+
+// Right way of inheretance
+Object.setPrototypeOf(john, solder); //sets prototype to object
+
+const tanya = Object.create(solder); // Creates new object "tanya" which has prototype "solder"
+tanya.sayHello(); /// hello
+
 ///////// Spread Operator ///////
 
 // with Primitive data types it works wih VALUES
@@ -123,12 +156,13 @@ arr.unshift("a"); // adds element to the beggining of array
 delete arr[1]; // deletes second element in array
 
 // will create array from string if entered with ","
+{
+  const str = prompt("", ""); // java,ggg,hhh,jjj
+  const products = str.split("", "");
 
-const str = prompt("", ""); // java,ggg,hhh,jjj
-const products = str.split("", "");
-
-const months = ["Jan", "March", "April", "June"];
-months.splice(1, 0, "Feb");
+  const months = ["Jan", "March", "April", "June"];
+  months.splice(1, 0, "Feb");
+}
 // inserts at index 1
 console.log(months);
 // expected output: Array ["Jan", "Feb", "March", "April", "June"]
