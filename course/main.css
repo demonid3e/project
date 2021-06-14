@@ -1,0 +1,18 @@
+body {
+  display: block;
+  margin: 8px;
+}
+
+button {
+  height: 60px;
+  width: 150px;
+  background-color: black;
+  border-radius: 15px;
+  color: white;
+}
+
+.box {
+  height: 200px;
+  width: 200px;
+  background-color: red;
+}
